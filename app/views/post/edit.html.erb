@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="col-md-12">
+<h1>修正</h1>
+<form action='/post/update/<%= @post.id %>/' method='post'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  会社名 : <input type="text" name="post_title" value="<%=@post.title%>"><br />
+
+  紹介 : <textarea name="post_introduce" rows="8" cols="80"><%=@post.introduce%></textarea><br />
+
+  資格 : <textarea name="post_content" rows="8" cols="80"><%=@post.content%></textarea><br />
+  開発言語 : <input type="text" name="post_money" value="<%=@post.money%>"><br />
+   url : <input type="text" name="post_url" value="<%=@post.url%>"><br />
+  <input class="btn btn-info" type="submit" value="修正">
+</form>
+    </div>
+</div>

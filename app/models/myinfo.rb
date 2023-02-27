@@ -1,0 +1,2 @@
+class Myinfo < ApplicationRecord
+end

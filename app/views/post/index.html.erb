@@ -1,0 +1,39 @@
+<div class="container">
+  <%if user_signed_in?%>
+    <a href="/post/new">会社登録</a><br/>
+    <br>
+    <% @myinfos.each do |t|%> 
+          <% if t.user_id == current_user.id %>
+         <div class="card">
+           <div class="card-header">
+             <%= t.name %>
+           </div>
+           <div class="card-body">
+             <blockquote class="blockquote mb-0">
+               学歴: <%= t.academic %><br>
+               開発言語: <%= t.itlanguage %><br>
+               資格: <%= t.certificate %><br>
+              望む職務: <%= t.wish %><br>
+             </blockquote>
+           </div>
+         </div>
+       <%else%>
+    <%end%>
+  <%end%>
+  <br>
+<div class="row">
+  <div class="col-md-12 bg-white">
+    <% @posts.each do |p|%>
+       <% if p.user_id == current_user.id %>
+          <p><%= p.title %></p>
+        <a href="/post/detail/<%= p.id %>">view</a>
+        <hr>
+      <%end%>
+    <%end%>
+      <%else%>
+        <p>ログインしてください。</p>
+     <%end%>
+</div>
+  </div>
+</div>
+

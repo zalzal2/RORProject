@@ -1,0 +1,18 @@
+<div class="container">
+<div class="col-md-12 bg-white">
+        <p><%= @post.title %></p><hr>
+        <p>紹介 <%= simple_format @post.introduce %></p><hr />
+        <p>資格 <%= simple_format @post.content %> </p><hr />
+       <p>開発言語 : <%= @post.money %> </p><hr />
+       <p>url : <a href="<%= @post.url %>"><%= @post.url %></a></p><hr />
+         <% if @post.user_id == current_user.id %> 
+        <a class="btn btn-dark" href="/post/edit/<%= @post.id %>">修正</a>
+          <form action="/post/destroy/<%= @post.id %>" method="post">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <input type="submit" name="" class="btn btn-dark" value="削除">
+          </form>
+        <%else%>
+        <% end %>
+          <a href="/post/index">main</a>
+</div>
+</div>

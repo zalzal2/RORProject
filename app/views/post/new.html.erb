@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-md-12 ">
+<h1>会社登録</h1>
+<form action="/post/create" method="post">
+ <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  会社名 : <input type="text" name="post_title" value=""><br />
+
+  紹介 : <textarea name="post_introduce" rows="8" cols="80"></textarea><br />
+
+  資格 : <textarea name="post_content" rows="4" cols="80"></textarea><br />
+  開発言語 : <input type="text" name="post_money" value=""><br />
+   url : <input type="text" name="post_url" value=""><br />
+  <input type="submit" value="登録">
+</form>
+  </div>
+</div>

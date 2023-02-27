@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-md-12 bg-white">
+<h1>mypage</h1>
+ <a href="/mypage/new">個人情報登録</a><br /><br />
+ <% @myinfos.each do |m|%>
+  <% if m.user_id == current_user.id %>
+  名前 : <%= m.name %><br>
+  学歴 : <%= m.academic %><br>
+  開発言語 : <%= m.itlanguage %><br>
+  資格 : <%= m.certificate %><br>
+  望む職務 : <%= m.wish %><br>
+  <br />
+   <a class="btn btn-dark"href="/mypage/edit/<%= m.id %>">修正</a>
+  <form action="/mypage/destroy/<%= m.id %>" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>    
+    <input class="btn btn-dark" type="submit" name="" value="削除">
+  </form>
+<%end%>
+<%end%>
+  <hr />
+  </div>
+</div>

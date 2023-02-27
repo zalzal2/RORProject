@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="col-md-12">
+<h1>個人情報登録</h1>
+<form action="/mypage/create" method="post">
+ <%= hidden_field_tag :authenticity_token, form_authenticity_token %>     名前 : <input type="text" name="myinfo_name" value=""><br />
+ 学歴 : <textarea name="myinfo_academic" rows="8" cols="80"></textarea><br />
+ 開発言語 : <input type="text" name="myinfo_itlanguage" value=""><br /> 資格 : <textarea name="myinfo_certificate" rows="4" cols="80"></textarea><br />
+   望む職務 : <input type="text" name="myinfo_wish" value=""><br />
+  <input type="submit" value="登録">
+</form>
+  </div>
+</div>
